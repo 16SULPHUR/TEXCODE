@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main-Template</title>
+    <link rel="stylesheet" href="Main-Template.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <body>
+    <nav>
+    <i class="fa-solid fa-bars fa-xl" id="hamburger" style="color: white;" onclick="showsidebar()"></i>
+    <div><a  id="logo" href="index.html">TexCode</a></div>
+    <div id="links">
+      <a href="index.html">Home</a>
+      <a href="">Blog</a>
+      <a href="">About us</a>
+      <a href="">Contact</a>
+    </div>
+    <div class="button-div">
+    <button class="signup-button"> <a style="color: rgb(54, 34, 105);" href="login.html">Signup</a> </button>
+    <button class="login-button"> <a href="login.html">Login</a> </button>
+    </div>
+      </ul>
+    </nav>
+
+    <div class="sidebar">
+        <span id="dropdown-btn" onclick="drop()">
+CATAGORY   <i class="fa-solid fa-caret-down fa-lg"></i>
+        </span>
+
+        <ul id="catagory-list">
+            <li><a href="loginpages.html">login Pages</a></li>
+            <li><a href="forms.html">Forms</a></li>
+            <li><a href="navbars.html">Nav Bars</a></li>
+            <li>Buttons</li>
+            <li> <a href="boxshadows.html">Box Shadows</a></li>
+        </ul>
+    </div>
+
+    <footer 
+      style="
+        position: absolute;
+        bottom: -150vh;
+        background-color: black;
+        color: white;
+        width: 100vw;
+        height: 30vh;
+        z-index: -1;
+        ">
+                <div id="info"
+                style="
+                  width: 60vw;
+                  margin: 15px auto;
+                  ">
+                        Designed By <br><br>
+                        Ankit S. Patil <br> 202203103510124 <br> Asha M. Tarsadia Institute of Conputer Science and Technology
+                </div>
+      </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+
+<!-- <html>
+<head>
+    <title>Login Pages</title>
+    <link rel="stylesheet" href="index.css">
+
+          <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+          <script>
+              $(function() {
+                $("#includeHtml").load("Main-Template.html");
+              });
+          </script>
+
+</head>
+<body>
+   <div id="includeHtml"></div>
+</body>
+</html>-->

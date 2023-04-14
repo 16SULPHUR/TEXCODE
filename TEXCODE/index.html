@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEXCODE</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Main-Template.css">
+    <link rel="stylesheet" href="loginpages.css">
+  </head>
+  <body>
+    <!-- -------------------NAVBAR--------------------->
+    <nav>
+    <i class="fa-solid fa-bars fa-xl" id="hamburger" style="color: white; cursor: pointer;" onclick="showsidebar()"></i>
+    <div><a  id="logo" href="index.html" style="user-select: none;">TexCode</a></div>
+    <div id="links">
+      <a href="">Home</a>
+      <a href="">Blog</a>
+      <a href="">About us</a>
+      <a href="">Contact</a>
+    </div>
+    <div class="button-div">
+    <button class="signup-button"> <a style="color: rgb(54, 34, 105);" href="login.html">Signup</a> </button>
+    <button class="login-button"> <a href="login.html">Login</a> </button>
+    </div>
+      </ul>
+    </nav>
+
+    <!-- CONTENT DIV -->
+    <div class="homecontent">
+      <!-- CONTENT HEADING -->
+      <div id="heading">
+
+        <!-- SLIDESHOW -->
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <img src="slideshow-images/1.jpg" style="width:100%">
+            <div class="text">Free Templates For Your Websites</div>
+          </div>
+
+          <div class="mySlides fade">
+            <img src="slideshow-images/2.jpg" style="width:100%">
+            <div class="text" style="bottom: 45px; font-size: 123px;">Login Page Templates</div>
+          </div>
+
+          <div class="mySlides fade">
+            <img src="slideshow-images/3.jpg" style="width:100%">
+            <div class="text" style="bottom: 45px; font-size: 123px;">NavBar Templates</div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+    </div>
+ <!-- -----------------Display Examples-----------------  -->
+      <div class="display-examples">
+        
+        <h2>Try These Templates !</h2>
+      
+      <div id="examples">
+        <div id="ops-r1">
+             <div id="img1">
+                <img src="login pages designs/3.png" alt="">
+                <br><div class="middle"  >
+                  <span id="copy1" onclick="copy1()">COPY</span><br><br>
+                  <span id="preview1"><a href="login pages designs/2.html"  target="_blank" style="text-decoration: none; color: white;">PREVIEW</a></span>
+                </div>
+             </div>
+             <div id="img1">
+                <img src="login pages designs/1.png" alt="">
+                <br><div class="middle"  >
+                  <span id="copy3" onclick="copy3()">COPY</span><br><br>
+                  <span id="preview1"><a href="login pages designs/1.html"  target="_blank" style="text-decoration: none; color: white;">PREVIEW</a></span>
+                </div>
+             </div>
+             <div id="img1">
+                <img src="Forms Designs/3.png" alt="">
+                <br><div class="middle"  >
+                  <span id="copy2" onclick="copy2()">COPY</span><br><br>
+                  <span id="preview1"><a href="Forms Designs/3.html"  target="_blank" style="text-decoration: none; color: white;">PREVIEW</a></span>
+                </div>
+             </div>
+             
+        </div><br>
+        <div id="img1">
+                <img style="height: 60px; width: 996px;" src="Nav Bar Designs/2.png" alt="">
+                <br><div class="middle">
+                  <span id="copy7" onclick="copy7()" style="margin-right: 10px;">COPY</span>
+                  <span id="preview1"><a href="Nav Bar Designs/1.html"  target="_blank" style="text-decoration: none; color: white;">PREVIEW</a></span>
+                </div>
+             </div><br>
+        <div id="ops-r1">
+             <div id="img1">
+                <img src="Forms Designs/1.png" alt="">
+                <br><div class="middle"  >
+                  <span id="copy4" onclick="copy4()">COPY</span><br><br>
+                  <span id="preview1"><a href="Forms Designs/1.html"  target="_blank" style="text-decoration: none; color: white;">PREVIEW</a></span>
+                </div>
+             </div>
+             <div id="img1">
+                <img src="Forms Designs/2.png" alt="">
+                <br><div class="middle"  >
+                  <span id="copy5" onclick="copy5()">COPY</span><br><br>
+                  <span id="preview1"><a href="Forms Designs/2.html"  target="_blank" style="text-decoration: none; color: white;">PREVIEW</a></span>
+                </div>
+             </div>
+             <div id="img1">
+                <img src="login pages designs/1.png" alt="">
+                <br><div class="middle"  >
+                  <span id="copy6" onclick="copy6()">COPY</span><br><br>
+                  <span id="preview1"><a href="login pages designs/1.html"  target="_blank" style="text-decoration: none; color: white;">PREVIEW</a></span>
+                </div>
+             </div>
+        </div>
+      </div>
+      </div>
+      
+      <!-- Slidebar -->
+    <div class="sidebar">
+        <span id="dropdown-btn" onclick="drop()" style="user-select: none;">
+CATAGORY   <i class="fa-solid fa-caret-down fa-lg"></i>
+        </span>
+
+        <ul id="catagory-list">
+            <li><a href="loginpages.html">login Pages</a></li>
+            <li><a href="forms.html">Forms</a></li>
+            <li><a href="navbars.html">Nav Bars</a></li>
+            <li>Buttons</li>
+            <li> <a href="boxshadows.html">Box Shadows</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+    
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

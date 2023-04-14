@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login To TEXCODE</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap");
+      body {
+        background: url("index-bg.png");
+        background-size: cover;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #000;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #fff;
+        text-shadow: 2px 2px 4px #000000;
+      }
+
+      label {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 4px #000000;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        background-color: #1f1f1f;
+        color: #fff;
+      }
+
+      input[type="button"] {
+        padding: 10px;
+        background-color: #5346c7;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        width: 189px;
+      }
+
+       input[type="button"]:hover {
+        background-color: #382bb1;
+      }
+
+      .message {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      #error-message {
+        color: #fa0000;
+        text-shadow: 2px 2px 4px #000000;
+      }
+
+      span#logo {
+        font-family: 'Cinzel Decorative', cursive;
+        letter-spacing: 2px;
+        margin-left: 10px;
+        user-select: none;
+      }
+
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
+
+      span#register{
+        font-size: small;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <title>Login Page</title>
+        <style></style>
+      </head>
+      <body>
+        
+        <div class="container">
+            <h1>Login to <span id="logo">TEXCODE</span></h1>
+          <form method="post">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+                <input type="button" value="Login" onclick="sub()"><br>
+                <span id="register">Don’t have an account ? <a href="register.html" style="color: #5346c7;border-bottom: #5346c7 0.5px solid; margin-left: 3px;">Sign up</a></span>               
+          </form>
+        </div>
+        <script>
+          function sub(){
+            if( (document.getElementById("username").value=="" || (document.getElementById("password").value=="") ) ){
+            
+                alert("Please Fill All Fields")
+            }
+            else{
+              window.location = "index.html";
+          }
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
