@@ -161,131 +161,156 @@ function copy2() {
   let copyText = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <style>
-   * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  max-width: 600px;
+  margin: 40px auto;
 }
 
-body {
-  background-color: #000;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
+.card {
+  background-color: #f0f0f0;
+  color: #222;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  padding: 40px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  text-align: center;
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.form-group {
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 label {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
+  display: block;
+  margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: 100%;
+  padding: 15px;
   border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #1f1f1f;
-  color: #fff;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #222;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 button[type="submit"] {
-  padding: 10px;
-  background-color: #d91e18;
+  padding: 15px 30px;
+  background-color: #222;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #c0392b;
+  background-color: #444;
 }
 
-.message {
-  margin-top: 20px;
-  text-align: center;
+@media only screen and (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+ input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"] {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    font-size: 16px;
+  }
 }
 
-#error-message {
-  color: #3498db;
-  text-shadow: 2px 2px 4px #000000;
-}
 
 
 
-  </style>
+    </style>
 </head>
 <body>
-  <div class="container">
-    <form>
-      <h1>Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
-      <button type="submit">Login</button>
+    <div class="container">
+  <div class="card">
+    <h1>Register</h1>
+    <form id="registration-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+      </div>
+      <button type="submit">Register</button>
     </form>
-    <div class="message">
-      <p id="error-message"></p>
-    </div>
   </div>
-  <script>
-    const form = document.querySelector('form');
-const username = document.querySelector('#username');
-const password = document.querySelector('#password');
-const errorMessage = document.querySelector('#error-message');
+</div>
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  // perform validation
-  if(username.value.trim() === '') {
-    errorMessage.innerText = 'Username cannot be blank';
-  } else if(password.value.trim() === '') {
-    errorMessage.innerText = 'Password cannot be blank';
+
+
+
+<script>
+    const form = document.getElementById('registration-form');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (password.value !== confirmPassword.value) {
+    alert("Passwords do not match.");
   } else {
-    errorMessage.innerText = '';
-    // perform login logic here
-    alert('Login successful!');
-    form.reset();
+    // send registration data to server
+    alert("Registration successful!");
   }
 });
 
-  </script>
+</script>
 </body>
 </html>
-
-
-
 
 `;
   navigator.clipboard.writeText(copyText);
@@ -297,50 +322,43 @@ function copy3() {
   console.log("HIi");
   let copyText = `<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <style>
-   * {
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: #000;
+  background-color: #eee;
   font-family: Arial, sans-serif;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
   margin-bottom: 10px;
   font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 input[type="text"], input[type="password"] {
@@ -349,13 +367,11 @@ input[type="text"], input[type="password"] {
   border-radius: 5px;
   border: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #1f1f1f;
-  color: #fff;
 }
 
-button[type="submit"] {
+button {
   padding: 10px;
-  background-color: #d91e18;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -363,65 +379,45 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #c0392b;
+button:hover {
+  background-color: #3e8e41;
 }
 
-.message {
-  margin-top: 20px;
-  text-align: center;
-}
-
-#error-message {
-  color: #3498db;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-
-
-  </style>
-</head>
-<body>
-  <div class="container">
-    <form>
+    </style>
+  </head>
+  <body>
+    <div class="container">
       <h1>Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
-      <button type="submit">Login</button>
-    </form>
-    <div class="message">
-      <p id="error-message"></p>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <button type="submit" class="btn">Login</button>
+      </form>
     </div>
-  </div>
-  <script>
-    const form = document.querySelector('form');
+    <script>
+        const form = document.querySelector('form');
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
-const errorMessage = document.querySelector('#error-message');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
   
   // perform validation
   if(username.value.trim() === '') {
-    errorMessage.innerText = 'Username cannot be blank';
+    alert('Username cannot be blank');
   } else if(password.value.trim() === '') {
-    errorMessage.innerText = 'Password cannot be blank';
+    alert('Password cannot be blank');
   } else {
-    errorMessage.innerText = '';
-    // perform login logic here
     alert('Login successful!');
     form.reset();
   }
 });
 
-  </script>
-</body>
+    </script>
+  </body>
 </html>
-
-
 
 `;
   navigator.clipboard.writeText(copyText);
@@ -433,128 +429,91 @@ function copy4() {
   let copyText = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <style>
-   * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-body {
-  background-color: #000;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-}
-
-h1 {
-  text-align: center;
+.form-group {
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 label {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
+  display: block;
+  margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #1f1f1f;
-  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button[type="submit"] {
-  padding: 10px;
-  background-color: #d91e18;
-  color: #fff;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #c0392b;
-}
 
-.message {
-  margin-top: 20px;
-  text-align: center;
-}
-
-#error-message {
-  color: #3498db;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-
-
-  </style>
+    </style>
 </head>
 <body>
-  <div class="container">
-    <form>
-      <h1>Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
-      <button type="submit">Login</button>
-    </form>
-    <div class="message">
-      <p id="error-message"></p>
+    <div class="container">
+  <form id="registration-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
     </div>
-  </div>
-  <script>
-    const form = document.querySelector('form');
-const username = document.querySelector('#username');
-const password = document.querySelector('#password');
-const errorMessage = document.querySelector('#error-message');
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  // perform validation
-  if(username.value.trim() === '') {
-    errorMessage.innerText = 'Username cannot be blank';
-  } else if(password.value.trim() === '') {
-    errorMessage.innerText = 'Password cannot be blank';
+
+
+<script>
+    const form = document.getElementById('registration-form');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (password.value !== confirmPassword.value) {
+    alert("Passwords do not match.");
   } else {
-    errorMessage.innerText = '';
-    // perform login logic here
-    alert('Login successful!');
-    form.reset();
+    // send registration data to server
+    alert("Registration successful!");
   }
 });
 
-  </script>
+</script>
 </body>
 </html>
+
+
 `;
   navigator.clipboard.writeText(copyText);
   //  alert("Source code copied to clipboard");
@@ -565,126 +524,109 @@ function copy5() {
   let copyText = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <style>
-   * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-body {
-  background-color: #000;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+.card {
+  background-color: #222;
+  color: #fff;
+  border-radius: 4px;
+  padding: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  text-align: center;
+  margin-top: 0;
+  font-weight: 700;
+  color: #fa0000;
+}
+
+.form-group {
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 label {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
+  display: block;
+  margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #1f1f1f;
-  color: #fff;
+  border: 1px solid #9476d8;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #333;
 }
 
 button[type="submit"] {
-  padding: 10px;
-  background-color: #d91e18;
-  color: #fff;
+  padding: 10px 20px;
+  background-color: #fa0000;
+  color: white;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #c0392b;
-}
-
-.message {
-  margin-top: 20px;
-  text-align: center;
-}
-
-#error-message {
-  color: #3498db;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-
-
-  </style>
+    </style>
 </head>
 <body>
-  <div class="container">
-    <form>
-      <h1>Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
-      <button type="submit">Login</button>
+    <div class="container">
+  <div class="card">
+    <h1>Register</h1>
+    <form id="registration-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      </div>
+      <button type="submit">Register</button>
     </form>
-    <div class="message">
-      <p id="error-message"></p>
-    </div>
   </div>
-  <script>
-    const form = document.querySelector('form');
-const username = document.querySelector('#username');
-const password = document.querySelector('#password');
-const errorMessage = document.querySelector('#error-message');
+</div>
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  // perform validation
-  if(username.value.trim() === '') {
-    errorMessage.innerText = 'Username cannot be blank';
-  } else if(password.value.trim() === '') {
-    errorMessage.innerText = 'Password cannot be blank';
+
+
+
+<script>
+    const form = document.getElementById('registration-form');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (password.value !== confirmPassword.value) {
+    alert("Passwords do not match.");
   } else {
-    errorMessage.innerText = '';
-    // perform login logic here
-    alert('Login successful!');
-    form.reset();
+    // send registration data to server
+    alert("Registration successful!");
   }
 });
 
-  </script>
+</script>
 </body>
 </html>
 
@@ -697,50 +639,43 @@ function copy6() {
   console.log("HIi");
   let copyText = `<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <style>
-   * {
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: #000;
+  background-color: #eee;
   font-family: Arial, sans-serif;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
   margin-bottom: 10px;
   font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
 }
 
 input[type="text"], input[type="password"] {
@@ -749,13 +684,11 @@ input[type="text"], input[type="password"] {
   border-radius: 5px;
   border: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #1f1f1f;
-  color: #fff;
 }
 
-button[type="submit"] {
+button {
   padding: 10px;
-  background-color: #d91e18;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -763,62 +696,44 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #c0392b;
+button:hover {
+  background-color: #3e8e41;
 }
 
-.message {
-  margin-top: 20px;
-  text-align: center;
-}
-
-#error-message {
-  color: #3498db;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-
-
-  </style>
-</head>
-<body>
-  <div class="container">
-    <form>
+    </style>
+  </head>
+  <body>
+    <div class="container">
       <h1>Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
-      <button type="submit">Login</button>
-    </form>
-    <div class="message">
-      <p id="error-message"></p>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <button type="submit" class="btn">Login</button>
+      </form>
     </div>
-  </div>
-  <script>
-    const form = document.querySelector('form');
+    <script>
+        const form = document.querySelector('form');
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
-const errorMessage = document.querySelector('#error-message');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
   
   // perform validation
   if(username.value.trim() === '') {
-    errorMessage.innerText = 'Username cannot be blank';
+    alert('Username cannot be blank');
   } else if(password.value.trim() === '') {
-    errorMessage.innerText = 'Password cannot be blank';
+    alert('Password cannot be blank');
   } else {
-    errorMessage.innerText = '';
-    // perform login logic here
     alert('Login successful!');
     form.reset();
   }
 });
 
-  </script>
-</body>
+    </script>
+  </body>
 </html>
 
 `;
@@ -829,130 +744,154 @@ form.addEventListener('submit', e => {
 function copy7() {
   console.log("HIi");
   let copyText = `<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <style>
-   * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #000;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+	<title>Navbar Example</title>
+	<style>
+        header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #222;
   color: #fff;
-  text-shadow: 2px 2px 4px #000000;
+  z-index: 9999;
 }
 
-label {
-  margin-bottom: 10px;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.logo a {
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
-  text-shadow: 2px 2px 4px #000000;
+  text-decoration: none;
 }
 
-input[type="text"], input[type="password"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #1f1f1f;
-  color: #fff;
+.menu ul {
+  display: flex;
+  list-style: none;
 }
 
-button[type="submit"] {
-  padding: 10px;
-  background-color: #d91e18;
+.menu li {
+  margin-left: 20px;
+}
+
+.menu a {
+  text-decoration: none;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu a:hover {
+  color: #f00;
+}
+
+.menu a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f00;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover::before {
+  width: 100%;
+}
+
+.toggle {
+  display: none;
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #c0392b;
+.toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: #fff;
+  transition: all 0.3s ease;
 }
 
-.message {
-  margin-top: 20px;
-  text-align: center;
+.toggle span:nth-child(2) {
+  width: 20px;
 }
 
-#error-message {
-  color: #3498db;
-  text-shadow: 2px 2px 4px #000000;
-}
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
 
+  .toggle {
+    display: block;
+  }
 
+  .toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
 
-  </style>
+  .toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    z-index: 999;
+    opacity: 0;
+   
+     }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <form>
-      <h1>Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password">
-      <button type="submit">Login</button>
-    </form>
-    <div class="message">
-      <p id="error-message"></p>
-    </div>
-  </div>
-  <script>
-    const form = document.querySelector('form');
-const username = document.querySelector('#username');
-const password = document.querySelector('#password');
-const errorMessage = document.querySelector('#error-message');
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  // perform validation
-  if(username.value.trim() === '') {
-    errorMessage.innerText = 'Username cannot be blank';
-  } else if(password.value.trim() === '') {
-    errorMessage.innerText = 'Password cannot be blank';
-  } else {
-    errorMessage.innerText = '';
-    // perform login logic here
-    alert('Login successful!');
-    form.reset();
-  }
-});
-
-  </script>
+	<header>
+		<nav>
+			<div class="logo">
+				<a>Logo</a>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a>Home</a></li>
+					<li><a>About</a></li>
+					<li><a>Services</a></li>
+					<li><a>Contact</a></li>
+				</ul>
+			</div>
+			<div class="toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</nav>
+	</header>
 </body>
 </html>
+
+
 
 `;
   navigator.clipboard.writeText(copyText);
