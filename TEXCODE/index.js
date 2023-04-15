@@ -1,7 +1,29 @@
+// ----------------------------Sidebar----------------------------
+let droplist = document.getElementById("catagory-list");
+let ham = document.getElementById("hamburger");
+let sidebar = document.getElementsByClassName("sidebar")[0];
+droplist.style.display = "none";
+sidebar.style.display = "none";
+function drop() {
+  if (droplist.style.display == "none") {
+    droplist.style.display = "block";
+  } else {
+    droplist.style.display = "none";
+  }
+}
+
+function showsidebar() {
+  console.log("hii");
+  if (sidebar.style.display == "none") {
+    sidebar.style.display = "block";
+  } else {
+    sidebar.style.display = "none";
+  }
+}
 // ----------------------------Copy----------------------------
 function copy1() {
-    console.log("HIi");
-    let copyText = `<!DOCTYPE html>
+  console.log("HIi");
+  let copyText = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -129,9 +151,9 @@ form.addEventListener('submit', e => {
 
 
 `;
-    navigator.clipboard.writeText(copyText);
-    //  alert("Source code copied to clipboard");
-    document.getElementById("copy1").innerHTML = "COPIED"
+  navigator.clipboard.writeText(copyText);
+  //  alert("Source code copied to clipboard");
+  document.getElementById("copy1").innerHTML = "COPIED";
 }
 
 function copy2() {
@@ -937,7 +959,6 @@ form.addEventListener('submit', e => {
   //  alert("Source code copied to clipboard");
   document.getElementById("copy7").innerHTML = "COPIED";
 }
-
 
 // -----------------------SLIDESHOW-----------------------
 
