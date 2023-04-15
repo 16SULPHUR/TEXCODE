@@ -1,0 +1,20 @@
+#ops-r1{
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 50px;
+}
+
+.content img {
+    width: 1000px;
+    height: 60px;
+    margin: 20px 0px 0px 10px;
+}
+
+.middle{
+    display: flex;
+    gap: 30px;
+}
+
+#img1{
+    margin: 0px;
+}

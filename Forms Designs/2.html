@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #222;
+  color: #fff;
+  border-radius: 4px;
+  padding: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #fa0000;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #9476d8;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #fa0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+  <div class="card">
+    <h1>Register</h1>
+    <form id="registration-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<script>
+    const form = document.getElementById('registration-form');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (password.value !== confirmPassword.value) {
+    alert("Passwords do not match.");
+  } else {
+    // send registration data to server
+    alert("Registration successful!");
+  }
+});
+
+</script>
+</body>
+</html>
