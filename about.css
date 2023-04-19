@@ -1,0 +1,27 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* max-width: 50%; */
+    /* margin: auto; */
+    height: 100%;
+}
+
+.text-big {
+    font-family: 'Piazzolla', serif;
+    font-weight: bold;
+    font-size: 41px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.text-small {
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 18px;
+    text-align: center;
+}
