@@ -13,6 +13,7 @@
     padding: 15px;
     padding-right: 10px;
     background-blend-mode: darken;
+    margin-top: 70px;
 }
 
 .box {
@@ -64,4 +65,11 @@
 }
 .box:hover{
     opacity: 0.8;
+}
+
+h1{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    color: white;
 }

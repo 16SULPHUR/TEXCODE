@@ -2,8 +2,8 @@
 let droplist = document.getElementById("catagory-list");
 let ham = document.getElementById("hamburger");
 let sidebar = document.getElementsByClassName("sidebar")[0];
-droplist.style.display = "none";
-sidebar.style.display = "none";
+// droplist.style.display = "none";
+sidebar.style.display = "block";
 function drop() {
   if (droplist.style.display == "none") {
     droplist.style.display = "block";
